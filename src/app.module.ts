@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { PrismaService } from './prisma/prisma.service';
 import { ConfigModule } from '@nestjs/config';
+import { OrdersModule } from './orders/orders.module';
 import jwttokenConfig from './config/jwt.config';
 import refreshJwtConfig from './config/refresh-jwt.config';
 
@@ -15,6 +16,7 @@ import refreshJwtConfig from './config/refresh-jwt.config';
       load: [jwttokenConfig, refreshJwtConfig],
     }),
     AuthModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
