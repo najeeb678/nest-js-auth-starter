@@ -14,7 +14,5 @@ async function bootstrap() {
     }),
   );
   await app.listen(process.env.PORT ?? 4000);
-  console.log('expandVariables', process.env.expandVariables);
-  console.log('JWT_EXPIRES_IN', process.env.JWT_EXPIRES_IN);
 }
 void bootstrap();

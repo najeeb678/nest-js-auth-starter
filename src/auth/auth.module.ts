@@ -12,9 +12,9 @@ import type ms from 'ms';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
-        secret: config.get<string>('jwt.secret'),
+        secret: config.get<string>('jwttoken.secret'),
         signOptions: {
-          expiresIn: config.get<ms.StringValue>('jwt.expiresIn', '1d'),
+          expiresIn: config.get<ms.StringValue>('jwttoken.expiresIn', '1d'),
         },
       }),
     }),

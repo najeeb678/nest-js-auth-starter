@@ -4,14 +4,15 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { PrismaService } from './prisma/prisma.service';
 import { ConfigModule } from '@nestjs/config';
-import jwtConfig from './config/jwt.config';
+import jwttokenConfig from './config/jwt.config';
+import refreshJwtConfig from './config/refresh-jwt.config';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
       expandVariables: true,
-      load: [jwtConfig],
+      load: [jwttokenConfig, refreshJwtConfig],
     }),
     AuthModule,
   ],
