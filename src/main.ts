@@ -1,7 +1,7 @@
+// import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
-import 'dotenv/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -14,5 +14,7 @@ async function bootstrap() {
     }),
   );
   await app.listen(process.env.PORT ?? 4000);
+  console.log('expandVariables', process.env.expandVariables);
+  console.log('JWT_EXPIRES_IN', process.env.JWT_EXPIRES_IN);
 }
 void bootstrap();
